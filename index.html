@@ -1,0 +1,256 @@
+# Nureke-Co101
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Нурхан — IT специалист</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --text: #d4af37;
+      --card: #111;
+      --accent: #d4af37;
+      --hover: #fff;
+    }
+    [data-theme="light"] {
+      --bg: #f5f5f5;
+      --text: #222;
+      --card: #fff;
+      --accent: #0078d7;
+      --hover: #0078d7;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: 0.3s ease;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 1px solid #333;
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      opacity: 0.8;
+    }
+    .controls {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .controls button {
+      margin: 5px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: var(--bg);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+    }
+    .card p {
+      margin: 0;
+      opacity: 0.8;
+    }
+    .price {
+      float: right;
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border: 2px solid var(--accent);
+      border-radius: 5px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .contact a:hover {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .review-stars {
+      color: gold;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <header>
+    <h1 id="title">Нурхан — IT специалист</h1>
+    <p id="subtitle">Создание сайтов, настройка устройств, техподдержка</p>
+    <div class="controls">
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('kz')">KZ</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="toggleTheme()">🌗 Тема</button>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 id="services-title">Услуги</h2>
+
+    <div class="card">
+      <h3 id="s1">Создание сайта <span class="price">от 3 000 ₸</span></h3>
+      <p id="d1">Адаптивный, современный, с переключением тем и языков.</p>
+    </div>
+    <div class="card">
+      <h3 id="s2">Настройка iPhone / iPad <span class="price">от 1 000 ₸</span></h3>
+      <p id="d2">Установка, оптимизация, помощь с Apple ID.</p>
+    </div>
+    <div class="card">
+      <h3 id="s3">Настройка Android <span class="price">от 1 000 ₸</span></h3>
+      <p id="d3">Настройка, очистка, ускорение работы.</p>
+    </div>
+    <div class="card">
+      <h3 id="s4">Установка приложений <span class="price">от 1 500 ₸</span></h3>
+      <p id="d4">VPN, мессенджеры, соцсети — всё, что нужно.</p>
+    </div>
+    <div class="card">
+      <h3 id="s5">Оптимизация телефона <span class="price">от 2 000 ₸</span></h3>
+      <p id="d5">Удаление мусора, ускорение, настройка безопасности.</p>
+    </div>
+    <div class="card">
+      <h3 id="s6">Консультация <span class="price">от 1 000 ₸</span></h3>
+      <p id="d6">Помощь в выборе устройств и решений.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="reviews-title">Отзывы клиентов</h2>
+    <div class="card">
+      <div class="review-stars">★★★★★</div>
+      <p id="r1">«Очень доволен сайтом! Всё работает, красиво и удобно.» — Айдар</p>
+    </div>
+    <div class="card">
+      <div class="review-stars">★★★★★</div>
+      <p id="r2">«Настроил мне телефон за 10 минут. Рекомендую!» — Алия</p>
+    </div>
+  </section>
+
+  <section class="section contact">
+    <h2 id="contact-title">Связаться со мной</h2>
+    <a href="https://wa.me/77001234567">📱 WhatsApp</a>
+    <a href="https://t.me/nurekelachowski">✈️ Telegram</a>
+    <a href="tel:+77001234567">📞 Позвонить</a>
+    <a href="mailto:nurkhan@example.com">📧 Email</a>
+  </section>
+
+  <script>
+    const translations = {
+      ru: {
+        title: "Нурхан — IT специалист",
+        subtitle: "Создание сайтов, настройка устройств, техподдержка",
+        servicesTitle: "Услуги",
+        s1: "Создание сайта", d1: "Адаптивный, современный, с переключением тем и языков.",
+        s2: "Настройка iPhone / iPad", d2: "Установка, оптимизация, помощь с Apple ID.",
+        s3: "Настройка Android", d3: "Настройка, очистка, ускорение работы.",
+        s4: "Установка приложений", d4: "VPN, мессенджеры, соцсети — всё, что нужно.",
+        s5: "Оптимизация телефона", d5: "Удаление мусора, ускорение, настройка безопасности.",
+        s6: "Консультация", d6: "Помощь в выборе устройств и решений.",
+        reviewsTitle: "Отзывы клиентов",
+        r1: "«Очень доволен сайтом! Всё работает, красиво и удобно.» — Айдар",
+        r2: "«Настроил мне телефон за 10 минут. Рекомендую!» — Алия",
+        contactTitle: "Связаться со мной"
+      },
+      kz: {
+        title: "Нурхан — IT маман",
+        subtitle: "Сайт жасау, құрылғы баптау, техникалық қолдау",
+        servicesTitle: "Қызметтер",
+        s1: "Сайт жасау", d1: "Адаптивті, заманауи, тақырып пен тіл ауыстырумен.",
+        s2: "iPhone / iPad баптау", d2: "Орнату, оңтайландыру, Apple ID көмегі.",
+        s3: "Android баптау", d3: "Баптау, тазарту, жылдамдату.",
+        s4: "Қосымшалар орнату", d4: "VPN, мессенджерлер, әлеуметтік желілер — бәрі.",
+        s5: "Телефонды оңтайландыру", d5: "Қоқысты жою, жылдамдату, қауіпсіздік баптауы.",
+        s6: "Кеңес беру", d6: "Құрылғылар мен шешімдерді таңдауға көмек.",
+        reviewsTitle: "Клиент пікірлері",
+        r1: "«Сайт керемет! Барлығы жұмыс істейді, көркем және ыңғайлы.» — Айдар",
+        r2: "«Телефонды 10 минутта баптады. Ұсынамын!» — Алия",
+        contactTitle: "Байланысу"
+      },
+      en: {
+        title: "Nurkhan — IT Specialist",
+        subtitle: "Website creation, device setup, tech support",
+        servicesTitle: "Services",
+        s1: "Website creation", d1: "Responsive, modern, with theme and language switching.",
+        s2: "iPhone / iPad setup", d2: "Installation, optimization, Apple ID support.",
+        s3: "Android setup", d3: "Setup, cleanup, performance boost.",
+        s4: "App installation", d4: "VPNs, messengers, social media — everything you need.",
+        s5: "Phone optimization", d5: "Junk removal, speed-up, security setup.",
+        s6: "Consultation", d6: "Advice on devices and solutions.",
+        reviewsTitle: "Client Reviews",
+        r1: "“Very happy with the website! Everything works, looks great and is easy to use.” — Aidar",
+        r2: "“He set up my phone in 10 minutes. Highly recommend!” — Aliya",
+        contactTitle: "Contact Me"
+      }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("services-title").textContent = t.servicesTitle;
+      document.getElementById("s1").textContent = t.s1;
+      document.getElementById("d1").textContent = t.d1;
+      document.getElementById("s2").textContent = t.s2;
+      document.getElementById("d2").textContent = t.d2;
+      document.getElementById("s3").textContent = t.s3;
+      document.getElementById("d3").textContent = t.d3;
+      document.getElementById("s4").textContent = t.s4;
+      document.getElementById("d4").textContent = t.d4;
+      document.getElementById("s5").textContent = t.s5;
+      document.getElementById("d5").textContent = t.d5;
+      document.getElementById("s6").textContent = t.s6;
+      document.getElementById("d6").textContent = t.d6;
+      document.getElementById("reviews-title").textContent = t.reviewsTitle;
+      document.getElementById("r1").textContent = t.r1;
+      document.getElementById("r2").textContent = t.r2;
+      document.getElementById("contact-title").textContent = t.contactTitle;
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const current = body.getAttribute("data-theme");
+      body.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    }
+  </script>
+</body>
+</html>
+
